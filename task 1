@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProDigy Infotech</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    nav.scrolled {
+      background: #0d1b2a;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .menu li {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .menu li::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: white;
+      left: 0;
+      bottom: -4px;
+      transition: 0.3s;
+    }
+
+    .menu li:hover::after {
+      width: 100%;
+    }
+
+    .content {
+      padding-top: 100px;
+      min-height: 2000px;
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    }
+
+    h1 {
+      margin: 2rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo">ProDigy Infotech</div>
+    <ul class="menu">
+      <li>Home</li>
+      <li>About</li>
+      <li>Services</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h1>01</h1>
+    <h1>Comillas Negras</h1>
+  </div>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>
